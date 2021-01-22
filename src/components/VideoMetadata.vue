@@ -55,6 +55,9 @@ export default {
      methods: {
         randomNumber: (number) => Math.floor(Math.random() * number).toLocaleString(),
     },
+    created(){
+        console.log(this.title, this.date)
+    }
 }
 </script>
 

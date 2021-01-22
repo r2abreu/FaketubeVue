@@ -1,10 +1,15 @@
 <template>
   <Layout>
     <VideoDetail v-if="getSelectedVideo" :selectedVideo="getSelectedVideo" />
-    <VideoList />
     <section>
-      <CommentList />
-      <FakeVideoList />
+      <div>
+        <VideoMetadata :title="video.title" :date="video.formattedDate"  />
+        <CommentList />
+      </div>
+      <div>
+        <VideoList />
+        <FakeVideoList />
+      </div>
     </section>
   </Layout>
 </template>
@@ -14,6 +19,7 @@ import Layout from './components/Layout';
 // Componentes generados por api de Youtube
 import VideoList from './components/VideoList'
 import VideoDetail from './components/VideoDetail'
+import VideoMetadata from './components/VideoMetadata';
 // Componentes generados por librerias `faker` y `random user`
 import FakeVideoList from './components/FakeVideoList'
 import CommentList from './components/CommentList'
@@ -23,16 +29,39 @@ import {mapGetters, mapActions} from 'vuex';
 
 
 export default {
-  name: 'App',
-  computed: mapGetters(['getSelectedVideo', 'getVideos']),
   components: {
     Layout,
     CommentList,
     FakeVideoList,
     VideoList, 
-    VideoDetail
+    VideoDetail,
+    VideoMetadata
+  }, 
+  name: 'App',
+  computed: {
+    ...mapGetters(['getSelectedVideo', 'getVideos']),
+    video(){
+            if(this.getSelectedVideo) {
+                const { id: videoId, 
+                        snippet: {
+                            title, 
+                            description, 
+                            publishedAt
+                        }
+                    } = this.getSelectedVideo
+                const url = `https://www.youtube.com/embed/${videoId}`;
+                // Formato de fecha
+                const formattedDate = publishedAt.slice(0, publishedAt.indexOf('T'));
+                return{url, title, description, formattedDate}
+            }
+        }
+  },
+  methods: mapActions(['updateSelectedVideo']) ,
+  created() {
+    this.updateSelectedVideo();
   }
 }
+
 </script>
 
 <style lang='scss'>
