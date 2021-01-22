@@ -1,17 +1,19 @@
 <template>
   <Layout>
-    And this is my content
+    <CommentList />
   </Layout>
 </template>
 
 <script>
 import Layout from './components/Layout';
+import CommentList from './components/CommentList'
 
 
 export default {
   name: 'App',
   components: {
-    Layout
+    Layout,
+    CommentList
   }
 }
 </script>

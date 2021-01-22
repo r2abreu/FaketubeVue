@@ -4,18 +4,19 @@
             <img src="../../public/assets/logo.svg" alt="faketube logo" title="Faketube" />
             <h1>FakeTube <sup> ES</sup></h1>
         </nav>
+        <SearchBar />
     </header>
 </template>
 
 <script>
-// import SearchBar from './SearchBar';
+import SearchBar from './SearchBar';
 
 
 export default {
     name: 'Header',
-    // components: {
-    //     SearchBar
-    // }
+    components: {
+        SearchBar
+    }
 }
 </script>
 
