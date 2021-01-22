@@ -1,19 +1,40 @@
 <template>
   <Layout>
-    <CommentList />
+    <VideoDetail v-if="getSelectedVideo" />
+    <h1 v-else>Video not selected</h1>
+    <VideoList />
+    <section>
+      <CommentList />
+      <FakeVideoList />
+    </section>
   </Layout>
 </template>
 
 <script>
 import Layout from './components/Layout';
+// Componentes generados por api de Youtube
+import VideoList from './components/VideoList'
+import VideoDetail from './components/VideoDetail'
+// Componentes generados por librerias `faker` y `random user
+import FakeVideoList from './components/FakeVideoList'
 import CommentList from './components/CommentList'
+// Importaciones funcionales del componente
+import {mapGetters} from 'vuex';
+
 
 
 export default {
   name: 'App',
+  computed: mapGetters(['getSelectedVideo']),
   components: {
     Layout,
-    CommentList
+    CommentList,
+    FakeVideoList,
+    VideoList, 
+    VideoDetail
+  },
+  created() {
+    console.log(this.getSelectedVideo)
   }
 }
 </script>
@@ -49,4 +70,12 @@ body {
   font-family: var(--font-family);
   letter-spacing: -0.5px;
 }
+
+section {
+  padding: 0 5em;
+  gap: 2em;
+  display: flex;
+  justify-content: center;
+}
+
 </style>

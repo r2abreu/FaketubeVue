@@ -27,9 +27,10 @@ header {
     justify-content: space-around;
     position: sticky;
     top: 0;
-    padding: 0 15em;
     min-height: 56px;
     background-color: var(--background-color);
+    // Previene solapamiento de la imagen de pulgar abajo debido a propiedad `transform`
+    z-index: 1;
 
     nav {
         display: flex;

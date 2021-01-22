@@ -1,18 +1,23 @@
 <template>
-    <CommentDetail 
-    v-for="user in getUsers" 
-    :key="user.cell"
-    :avatar="user.picture.thumbnail" />
+    <div>
+        <VideoMetadata />
+        <CommentDetail 
+        v-for="user in getUsers" 
+        :key="user.cell"
+        :avatar="user.picture.thumbnail" />
+    </div>
 </template>
 
 <script>
 import randomuser from '../api/randomuser';
 import CommentDetail from './CommentDetail';
+import VideoMetadata from './VideoMetadata';
 
 export default {
     name: 'CommentList', 
     components: {
-        CommentDetail
+        CommentDetail,
+        VideoMetadata
     },
     data() {
         return {
@@ -39,5 +44,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+   
 </style>

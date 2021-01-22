@@ -92,7 +92,7 @@ export default {
                 margin-left: 0.5em;
 
                 img[alt="thumbs down"] {
-                    transform: rotate(-180deg)
+                    transform: rotate(-180deg);
                 }
             }
 
