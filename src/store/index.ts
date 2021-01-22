@@ -1,10 +1,10 @@
 import { createStore } from 'vuex'
-import youtube from '../api/youtube';
+import youtube, {apiDefaultParams} from '../api/youtube';
 
 
 export default createStore({
   state:()  => ({
-    searchTerm: 'Dross',
+    searchTerm: '',
     selectedVideo: null,
     videos: []
   }),
@@ -29,9 +29,49 @@ export default createStore({
       commit('setSearchTerm', term)
     },
     async updateVideos({commit}, term) {
-      const response = await youtube.get('')
-      console.log(response)
+      // const response = await youtube.get('', {
+      //   params: {
+      //     ...apiDefaultParams,
+      //     q: term
+      //   }
+      // })
+      // const videos = response.data.items;
       // commit('setVideos', videos)
+      const exampleObject = {
+        "kind": "youtube#searchResult",
+        "etag": "ng_yivYKQ3StFlt8-SQP2fH8ERU",
+        "id": {
+            "kind": "youtube#video",
+            "videoId": "Wy9q22isx3U"
+        },
+        "snippet": {
+            "publishedAt": "2019-01-10T12:59:59Z",
+            "channelId": "UC29ju8bIPH5as8OGnQzwJyA",
+            "title": "Vue JS Crash Course",
+            "description": "In this crash course you will learn all about Vue.js including what it is, Vue-CLI, components, data, events, directives, etc Sponsor: http://www.netlify.com Code ...",
+            "thumbnails": {
+                "default": {
+                    "url": "https://i.ytimg.com/vi/Wy9q22isx3U/default.jpg",
+                    "width": 120,
+                    "height": 90
+                },
+                "medium": {
+                    "url": "https://i.ytimg.com/vi/Wy9q22isx3U/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                },
+                "high": {
+                    "url": "https://i.ytimg.com/vi/Wy9q22isx3U/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                }
+            },
+            "channelTitle": "Traversy Media",
+            "liveBroadcastContent": "none",
+            "publishTime": "2019-01-10T12:59:59Z"
+        }
+    }
+      commit('setSelectedVideo', exampleObject);
     },
     updateSelectedVideo({commit}, video) {
       commit('setSelectedVideo', video)
@@ -39,3 +79,4 @@ export default createStore({
   },
 
 })
+

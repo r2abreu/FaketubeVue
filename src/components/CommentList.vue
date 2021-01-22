@@ -1,6 +1,5 @@
 <template>
     <div>
-        <VideoMetadata />
         <CommentDetail 
         v-for="user in getUsers" 
         :key="user.cell"
@@ -11,13 +10,12 @@
 <script>
 import randomuser from '../api/randomuser';
 import CommentDetail from './CommentDetail';
-import VideoMetadata from './VideoMetadata';
 
 export default {
     name: 'CommentList', 
     components: {
         CommentDetail,
-        VideoMetadata
+ 
     },
     data() {
         return {

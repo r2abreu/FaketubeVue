@@ -1,6 +1,11 @@
 <template>
     <form @submit="onFormSubmit">
-        <input @input="onInputChange" :placeholder="getSearchTerm" type="text" name="search" />
+        <input 
+        @input="onInputChange" 
+        :value="getSearchTerm" 
+        placeholder="Buscar" 
+        type="text" 
+        name="search" />
         <input type="submit" alt="Search" value=" " />
     </form>
 </template>
@@ -18,9 +23,12 @@ export default {
         }, 
         onFormSubmit(event) {
             event.preventDefault();
-            this.updateVideos(event.target.firstElementChild.value)   
+            const term = event.target.firstElementChild.value;
+            term ? this.updateVideos(term) : this.updateVideos('Aprende Vue')  
+               
         }
     },
+
 }
 </script>
 

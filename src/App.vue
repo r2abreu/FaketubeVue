@@ -1,7 +1,6 @@
 <template>
   <Layout>
-    <VideoDetail v-if="getSelectedVideo" />
-    <h1 v-else>Video not selected</h1>
+    <VideoDetail v-if="getSelectedVideo" :selectedVideo="getSelectedVideo" />
     <VideoList />
     <section>
       <CommentList />
@@ -15,26 +14,23 @@ import Layout from './components/Layout';
 // Componentes generados por api de Youtube
 import VideoList from './components/VideoList'
 import VideoDetail from './components/VideoDetail'
-// Componentes generados por librerias `faker` y `random user
+// Componentes generados por librerias `faker` y `random user`
 import FakeVideoList from './components/FakeVideoList'
 import CommentList from './components/CommentList'
 // Importaciones funcionales del componente
-import {mapGetters} from 'vuex';
+import {mapGetters, mapActions} from 'vuex';
 
 
 
 export default {
   name: 'App',
-  computed: mapGetters(['getSelectedVideo']),
+  computed: mapGetters(['getSelectedVideo', 'getVideos']),
   components: {
     Layout,
     CommentList,
     FakeVideoList,
     VideoList, 
     VideoDetail
-  },
-  created() {
-    console.log(this.getSelectedVideo)
   }
 }
 </script>
