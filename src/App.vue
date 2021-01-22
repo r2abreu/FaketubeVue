@@ -3,7 +3,7 @@
     <VideoDetail v-if="getSelectedVideo" :selectedVideo="getSelectedVideo" />
     <section>
       <div>
-        <VideoMetadata :title="video.title" :date="video.formattedDate"  />
+        <VideoMetadata v-if="getSelectedVideo" :title="video.title" :date="video.formattedDate"  />
         <CommentList />
       </div>
       <div>
@@ -56,9 +56,10 @@ export default {
             }
         }
   },
-  methods: mapActions(['updateSelectedVideo']) ,
+  methods: mapActions(['updateSelectedVideo', 'updateVideos']) ,
   created() {
-    this.updateSelectedVideo();
+    this.updateVideos('Aprende Mac');
+    this.updateSelectedVideo(this.getVideos[0])
   }
 }
 
@@ -98,7 +99,7 @@ body {
 }
 
 section {
-  padding: 0 5em;
+  padding: 20px 5em 0 5em;
   gap: 2em;
   display: flex;
   justify-content: center;

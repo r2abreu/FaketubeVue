@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="comment-list">
         <CommentDetail 
         v-for="user in getUsers" 
         :key="user.cell"
@@ -42,5 +42,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-   
+   .comment-list {
+       margin-top: 2rem !important;
+   }
 </style>

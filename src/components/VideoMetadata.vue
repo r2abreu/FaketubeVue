@@ -63,7 +63,6 @@ export default {
 
 <style lang="scss">
     .video-metadata {
-        padding: 0 5em;
         display: flex;
         justify-content: center;
         margin: auto;
