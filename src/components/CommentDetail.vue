@@ -91,9 +91,7 @@ export default {
             figure:last-of-type {
                 margin-left: 0.5em;
 
-                img[alt="thumbs down"] {
-                    transform: rotate(-180deg);
-                }
+          
             }
 
             span:last-of-type {

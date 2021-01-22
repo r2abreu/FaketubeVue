@@ -40,6 +40,7 @@ export default {
   --background-color: #202020;
   --font-family: 'Roboto', sans-serif;
   --secondary-color: #818179;
+  --border-divider: 1px solid  #ffffff1a;
 }
 
 /* RESET */ 
@@ -72,6 +73,10 @@ section {
   gap: 2em;
   display: flex;
   justify-content: center;
+}
+
+img[alt="No me gusta"] {
+    transform: rotate(-180deg);
 }
 
 </style>

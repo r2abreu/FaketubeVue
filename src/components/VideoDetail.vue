@@ -1,29 +1,36 @@
 <template>
     	<iframe :title="video.title" :src="video.url" />
-        <div class="video-metadata">
-
-        </div>
-	    <h4 className="ui header">{{video.title}}</h4>
+        <VideoMetadata  />
 		<p>{{video.description}}</p>
 </template>
 
 <script>
-
-
+import VideoMetadata from './VideoMetadata';
 export default {
     name: 'VideoDetail',
+    components: {
+        VideoMetadata
+    },
     props: ['selectedVideo'],
     computed: {
         video(){
             if(this.selectedVideo) {
-                const videoId = this.selectedVideo.id.videoId;
+                const { id: videoId, 
+                        snippet: {
+                            title, 
+                            description, 
+                            publishedAt
+                        }
+                    } = this.selectedVideo
                 const url = `https://www.youtube.com/embed/${videoId}`;
-                const title = this.selectedVideo.snippet.title;
-                const description = this.selectedVideo.snippet.description;
-                return{url, title, description}
+                // Formato de fecha
+                const formattedDate = publishedAt.slice(0, publishedAt.indexOf('T'));
+                return{url, title, description, formattedDate}
             }
-        }, 
-       
+        }
+    },
+    methods: {
+        randomNumber: (number) => Math.floor(Math.random() * number).toLocaleString(),
     },
     created() {
         console.log(this.selectedVideo);
