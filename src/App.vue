@@ -1,30 +1,50 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+  <Layout>
+    And this is my content
+  </Layout>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import Layout from './components/Layout';
+
+
+export default {
+  name: 'App',
+  components: {
+    Layout
+  }
+}
+</script>
+
+<style lang='scss'>
+:root {
+  --background-color: #202020;
+  --font-family: 'Roboto', sans-serif;
+  --secondary-color: #818179;
 }
 
-#nav {
-  padding: 30px;
+/* RESET */ 
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: var(--font-family);
+  letter-spacing: -0.5px;
 }
 </style>
