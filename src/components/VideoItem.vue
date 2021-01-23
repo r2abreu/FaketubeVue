@@ -10,7 +10,6 @@
             <span>{{videoProps.title}}</span> 
             <span>{{videoProps.channelTitle}}</span>
             <span>{{randomDate(1000000).toLocaleString()}} visualizaciones</span>
-            <span>Hace {{randomDate(12)}} meses</span>
         </div>
 	</div>
 </template>

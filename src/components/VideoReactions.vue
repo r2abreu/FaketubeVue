@@ -3,14 +3,16 @@
         <img :src="src" :title="title" :alt="alt"  />
     </figure>
     <span>
-        <slot></slot>
+        <slot>
+            {{randomNumber}}
+        </slot>
     </span>
 </template>
 
 <script>
 export default {
     name: 'VideoReactions',
-    props: ['src', 'title', 'alt']
+    props: ['src', 'title', 'alt', 'randomNumber']
 }
 </script>
 

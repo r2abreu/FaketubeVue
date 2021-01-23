@@ -2,8 +2,8 @@
     <footer>
         <div>
             <h2>Bienvenido al Faketube, mi primera aplicación en Vue.js.</h2>
-            <p>Mi nombre es Arturo y soy un desarrollador web. Estoy muy interesado por realizar proyectos mas ambiciosos y seguir aprendiendo. Si lo deseas, podrás conocer un poco mas sobre mi trabajo accediendo a los enlaces de esta sección.</p>
-            <p>La idea detras del Faketube era la de poder practicar y aprender más de <a href="https://v3.vuejs.org/" target="_blank" lang="en">V3</a> y <a href="https://next.vuex.vuejs.org/" target="_blank" lang="en">Vuex</a>.</p>
+            <p>Mi nombre es Arturo y soy un desarrollador web. Estoy muy interesado por realizar proyectos más ambiciosos y seguir aprendiendo. Si lo deseas, podrás conocer un poco más sobre mi trabajo accediendo a los enlaces de esta sección.</p>
+            <p>Mi idea al crear Faketube era la de poder practicar y aprender más de <a href="https://v3.vuejs.org/" target="_blank" lang="en">V3</a> y <a href="https://next.vuex.vuejs.org/" target="_blank" lang="en">Vuex</a>.</p>
             <h3>Cosas a mejorar:</h3>
             <ul>
                 <li>
@@ -37,7 +37,7 @@ export default {
         border-top: var(--border-divider);
         padding-top: 2em;
         color: var(--secondary-color);
-        max-width: 60%;
+        max-width: 70%;
         margin: 2rem auto;
         display: flex;
         gap: 2em;
@@ -47,6 +47,7 @@ export default {
             display: flex;
             flex-direction: column;
             flex: 1 1 40%;
+            min-width: 160px;
 
             a {
                 width: 100%;
@@ -95,6 +96,7 @@ export default {
         border-radius: 0.5em;
         cursor: pointer;
         transition: all 0.1s ease-in;
+      
     }
 
     .button:hover {
@@ -102,5 +104,19 @@ export default {
         box-shadow: 1px 1px 10px 5px lighten(#202020, 10%);
     }
 
+    @media screen and (max-width: 800px) {
+        footer {
+            flex-direction: column;
+            max-width: 100%;
+            width:100%;
+            padding: 2rem 4rem;
+        }
+    }
+
+    @media screen and (max-width: 450px) {
+        footer {
+            padding: 2rem 2rem;
+        }
+    }
 
 </style>

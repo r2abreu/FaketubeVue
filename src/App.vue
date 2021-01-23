@@ -101,4 +101,16 @@ img[alt="No me gusta"] {
     transform: rotate(-180deg);
 }
 
+
+@media screen and (max-width: 1200px) {
+  section {
+    flex-direction: column;
+    padding: 20px 2em;
+
+    & > div:first-of-type {
+      min-width: initial;
+    }
+  }
+}
+
 </style>

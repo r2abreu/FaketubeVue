@@ -1,5 +1,7 @@
 <template>
-    	<iframe :title="video.title" :src="video.url" />
+    	<div>
+            <iframe :title="video.title" :src="video.url" width="1600" height="900" frameborder="0" />
+        </div>
 		<p>{{video.description}}</p>
 </template>
 
@@ -33,9 +35,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    iframe {
+    div {
+        overflow: hidden;
+        position: relative;
         width: 100%;
-        height: 50em;
+    }
+
+    div::after {
+        padding-top: 56.25%;
+        display: block;
+        content: '';
+    }
+ 
+    iframe {
         border: 0;
+        position:absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
 </style>

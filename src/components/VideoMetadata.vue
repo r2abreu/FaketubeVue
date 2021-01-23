@@ -4,21 +4,22 @@
                 <h4>{{video.title}}</h4>
                 <div class="video-stats">
                     <div>
-                        <span>{{randomNumber(1000000)}} visualizaciones</span>
+                        <span>{{randomNumber(10000000)}} visualizaciones</span>
                     </div>
                     <div>
                         <VideoReactions 
                         :src="require('../../public/assets/thumbs.svg')" 
                         :alt="'Me gusta'"
                         :title="'Me gusta'"
+                        :random-number="randomNumber(1000000)"
                         >
-                            {{randomNumber(1000000)}}
                         </VideoReactions>
                         <VideoReactions 
                         :src="require('../../public/assets/thumbs.svg')"
                         :alt="'No me gusta'"
-                        :title="'No me gusta'">
-                            {{randomNumber(10000)}}
+                        :title="'No me gusta'"
+                        :random-number="randomNumber(100000)"
+                        >
                         </VideoReactions>
                         <VideoReactions 
                         :src="require('../../public/assets/share.svg')"
@@ -117,6 +118,23 @@ export default {
             justify-content: space-around;
             align-items: center;
             width: 450px;
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+        .video-stats {
+            height: min-content;
+            padding: 1em 0;
+            gap: 1em;
+            flex-direction: column;
+            align-items: flex-start;
+       
+        }
+    }
+
+    @media screen and (max-width: 460px) {
+        .video-stats div:last-of-type {
+            display: none;
         }
     }
 </style>

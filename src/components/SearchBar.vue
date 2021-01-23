@@ -65,4 +65,20 @@ export default {
 
         }
     }
+
+    @media screen and (max-width: 800px) {
+    form {
+        flex: 1 1 90%;
+
+        input:not([type="submit"]) {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 370px) {
+        input[type="submit"] {
+            display: none;
+        }
+    }
+}
 </style>

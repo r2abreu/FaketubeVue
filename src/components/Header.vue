@@ -55,4 +55,19 @@ header {
         }
     }
 }
+
+@media screen and (max-width: 800px) {
+
+    header {
+        padding: 0 0.5em;
+    }
+
+    nav {
+       flex: 1 1 10%;
+
+       h1 {
+           display: none;
+       }
+    }
+}
 </style>
