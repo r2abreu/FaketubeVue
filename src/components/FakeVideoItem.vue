@@ -94,5 +94,12 @@ export default {
 
 }	
 
-
+@media screen and (max-width: 350px) {
+	.video-item div {
+		span:first-of-type {
+			// font-size: 0.6em;
+			max-width: 140px;
+		}
+	}
+}
 </style>

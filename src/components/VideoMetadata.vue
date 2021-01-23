@@ -108,7 +108,7 @@ export default {
 
         div:first-of-type {
             span {
-                color: #86805c;
+                color: #aaaaaa;
             }
         }
 

@@ -113,4 +113,10 @@ img[alt="No me gusta"] {
   }
 }
 
+@media screen and (max-width: 420px) {
+  section {
+    padding: 20px 0;
+  }
+}
+
 </style>

@@ -25,6 +25,7 @@ export default {
             event.preventDefault();
             const term = event.target.firstElementChild.value;
             term ? this.updateVideos(term) : this.updateVideos('Aprende Vue')  
+            console.log('trigger')
                
         }
     },
