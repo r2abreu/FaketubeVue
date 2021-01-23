@@ -1,10 +1,10 @@
 <template>
       <div class="video-metadata">
 	        <div>
-                <h4>{{title}}</h4>
+                <h4>{{video.title}}</h4>
                 <div class="video-stats">
                     <div>
-                        <span>{{randomNumber(1000000)}} visualizaciones {{date}} </span>
+                        <span>{{randomNumber(1000000)}} visualizaciones</span>
                     </div>
                     <div>
                         <VideoReactions 
@@ -44,20 +44,36 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex';
 import VideoReactions from './VideoReactions';
 
 export default {
-    name: 'VideoMetadata', 
-    props: ['title', 'date'],
+    name: 'VideoMetadata',
     components: {
         VideoReactions
     },
-     methods: {
+        methods: {
+         ...mapGetters(['getSelectedVideo']),
         randomNumber: (number) => Math.floor(Math.random() * number).toLocaleString(),
     },
-    created(){
-        console.log(this.title, this.date)
-    }
+    computed: {
+         video(){
+            if(this.getSelectedVideo) {
+                const { id: videoId, 
+                        snippet: {
+                            title, 
+                            description, 
+                            publishedAt
+                        }
+                    } = this.getSelectedVideo();
+                const url = `https://www.youtube.com/embed/${videoId}`;
+                // Formato de fecha
+                const formattedDate = publishedAt.slice(0, publishedAt.indexOf('T'));
+                return{url, title, description, formattedDate}
+            }
+        }
+    },
+
 }
 </script>
 
@@ -66,6 +82,10 @@ export default {
         display: flex;
         justify-content: center;
         margin: auto;
+
+        & > div:first-of-type {
+            width: 100%;
+        }
 
     } 
 

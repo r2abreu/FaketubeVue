@@ -44,7 +44,8 @@ export default {
 	 display: flex;
 	 margin-top: 1em;
 	 width: 402px;
-	 height: 94px;
+	 height: min-content;
+	 cursor: pointer;
 
 	span {
 		display: block;
@@ -53,6 +54,7 @@ export default {
 	figure {
 		margin: 0 0.5em 0 0;
 		position: relative;
+		max-height: 94px;
 
 		
 

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <FakeVideoItem v-for="n in 9" :key="n" />
+        <FakeVideoItem v-for="n in 5" :key="n" />
     </div>
 </template>
 

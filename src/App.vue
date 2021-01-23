@@ -3,7 +3,7 @@
     <VideoDetail v-if="getSelectedVideo" :selectedVideo="getSelectedVideo" />
     <section>
       <div>
-        <VideoMetadata v-if="getSelectedVideo" :title="video.title" :date="video.formattedDate"  />
+        <VideoMetadata v-if="getSelectedVideo" />
         <CommentList />
       </div>
       <div>
@@ -40,26 +40,13 @@ export default {
   name: 'App',
   computed: {
     ...mapGetters(['getSelectedVideo', 'getVideos']),
-    video(){
-            if(this.getSelectedVideo) {
-                const { id: videoId, 
-                        snippet: {
-                            title, 
-                            description, 
-                            publishedAt
-                        }
-                    } = this.getSelectedVideo
-                const url = `https://www.youtube.com/embed/${videoId}`;
-                // Formato de fecha
-                const formattedDate = publishedAt.slice(0, publishedAt.indexOf('T'));
-                return{url, title, description, formattedDate}
-            }
-        }
+   
   },
   methods: mapActions(['updateSelectedVideo', 'updateVideos']) ,
   created() {
-    this.updateVideos('Aprende Mac');
+    this.updateVideos('Learn Vue');
     this.updateSelectedVideo(this.getVideos[0])
+    console.log(this.getVideos)
   }
 }
 
@@ -71,6 +58,7 @@ export default {
   --font-family: 'Roboto', sans-serif;
   --secondary-color: #818179;
   --border-divider: 1px solid  #ffffff1a;
+  --youtube-red: #FF0000;
 }
 
 /* RESET */ 
@@ -103,6 +91,10 @@ section {
   gap: 2em;
   display: flex;
   justify-content: center;
+
+  & > div:first-of-type {
+    min-width: 800px;
+  }
 }
 
 img[alt="No me gusta"] {

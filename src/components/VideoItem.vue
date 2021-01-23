@@ -1,5 +1,5 @@
 <template>
-    <div className="video-item">
+    <div className="video-item" @click="updateSelectedVideo(video)">
         <figure>
             <img :src="videoProps.url" :alt="videoProps.title" :title="videoProps.title" />
             <figcaption>
@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex';
+
 export default {
     name: 'VideoItem',
     props: ['video'], 
@@ -36,6 +38,7 @@ export default {
         }
     },
     methods: {
+        ...mapActions(['updateSelectedVideo']),
 		randomDate(time) {
             return Math.floor(Math.random() * time)
 		},
@@ -49,7 +52,3 @@ export default {
 
 }
 </script>
-
-<style lang="scss" scoped>
-
-</style>
