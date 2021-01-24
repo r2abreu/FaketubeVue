@@ -133,6 +133,10 @@ export default {
     }
 
     @media screen and (max-width: 460px) {
+        .video-metadata {
+            padding: 0 1em;
+        }
+
         .video-stats div:last-of-type {
             display: none;
         }
