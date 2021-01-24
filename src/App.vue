@@ -8,7 +8,6 @@
       </div>
       <div>
         <VideoList />
-        <FakeVideoList />
       </div>
     </section>
   </Layout>
@@ -21,7 +20,6 @@ import VideoList from './components/VideoList'
 import VideoDetail from './components/VideoDetail'
 import VideoMetadata from './components/VideoMetadata';
 // Componentes generados por librerias `faker` y `random user`
-import FakeVideoList from './components/FakeVideoList'
 import CommentList from './components/CommentList'
 // Importaciones funcionales del componente
 import {mapGetters, mapActions} from 'vuex';
@@ -32,7 +30,6 @@ export default {
   components: {
     Layout,
     CommentList,
-    FakeVideoList,
     VideoList, 
     VideoDetail,
     VideoMetadata
@@ -46,7 +43,6 @@ export default {
   created() {
     this.updateVideos('Learn Vue');
     this.updateSelectedVideo(this.getVideos[0])
-    console.log(this.getVideos)
   }
 }
 

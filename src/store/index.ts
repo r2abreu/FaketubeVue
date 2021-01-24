@@ -1,6 +1,6 @@
 import { createStore } from 'vuex'
 import youtube, {apiDefaultParams} from '../api/youtube';
-import placeHolderData from '../api/placeHolder';
+// import placeHolderData from '../api/placeHolder';  
 
 
 

@@ -51,3 +51,70 @@ export default {
 
 }
 </script>
+
+<style lang="scss">
+
+
+.video-item {
+	 display: flex;
+	 margin-top: 1em;
+	 width: 402px;
+	 height: min-content;
+	 cursor: pointer;
+
+	span {
+		display: block;
+	}
+
+	figure {
+		margin: 0 0.5em 0 0;
+		position: relative;
+		max-height: 94px;
+
+		
+
+		img {
+			width: 168px;
+			height: 94px;
+		}
+
+		figcaption {
+			position: absolute;
+			bottom: 5px;
+			right: 5px;
+			font-size: 0.75rem;
+			font-weight: bold;
+			padding: 0.2em;
+			color: #fff;
+			background-color: #0000008e
+		}
+
+	}
+
+	div {
+		span:first-of-type {
+			color: #fff;
+			font-weight: bold;
+			font-size: 1rem;
+			margin-bottom: 4px;
+		}
+
+		span {
+			color: #8a97a0;
+			font-size: 0.85rem;
+			letter-spacing: 0.5px;
+		}
+	}
+
+
+}	
+
+@media screen and (max-width: 350px) {
+	.video-item div {
+		span:first-of-type {
+			max-width: 140px;
+		}
+	}
+}
+
+</style>
