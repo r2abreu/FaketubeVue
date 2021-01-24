@@ -6,7 +6,7 @@
 
 Mi primera aplicación en Vue.js, creada para poder practicar y aprender más de V3 y Vuex.
 
-## Apis
+## APIs
 
 La aplicación usa la [API de YouTube](https://developers.google.com/youtube/v3) como herramienta inicial para obtener los videos. 
 
@@ -20,5 +20,8 @@ Los comentarios y otros componentes de la interfaz son *placeholders*, o informa
 
 * Estructurar y estandarizar la aplicación siguiendo la Style Guide de Vue. 
 
+## Hosting
+
+Alojamiento gratuito y desarollo continuo provisto por [Netlify](https://www.netlify.com/).
 
 
