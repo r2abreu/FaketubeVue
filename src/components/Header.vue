@@ -1,7 +1,9 @@
 <template>
     <header>
         <nav>
-            <img src="../../public/assets/logo.svg" alt="faketube logo" title="Faketube" />
+            <a href="/#bottom">
+                <img src="../../public/assets/logo.svg" alt="faketube logo" title="Faketube" />
+            </a>
             <h1>FakeTube <sup> ES</sup></h1>
         </nav>
         <SearchBar />

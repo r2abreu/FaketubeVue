@@ -46,7 +46,7 @@ export default createStore({
     },
     updateSelectedVideo({commit}, video) {
       commit('setSelectedVideo', video);
-      document.body.scrollTop = 0;
+      window.scrollTo(0,0);
     }
   },
 

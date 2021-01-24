@@ -1,5 +1,5 @@
 <template>
-    <footer>
+    <footer id="bottom">
         <div>
             <h2>Bienvenido al Faketube, mi primera aplicación en Vue.js.</h2>
             <p>Mi nombre es Arturo y soy un desarrollador web. Estoy muy interesado por realizar proyectos más ambiciosos y seguir aprendiendo. Si lo deseas, podrás conocer un poco más sobre mi trabajo accediendo a los enlaces de esta sección.</p>
