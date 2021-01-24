@@ -1,8 +1,16 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d254ee34-4e47-4cda-ae38-b11b372b26c7/deploy-status)](https://app.netlify.com/sites/faketube/deploys)
+
 # El Faketube
 
 ![Screenshot](punlic/../public/assets/screenshot.png)
 
 Mi primera aplicación en Vue.js, creada para poder practicar y aprender más de V3 y Vuex.
+
+## Apis
+
+La aplicación usa la [API de YouTube](https://developers.google.com/youtube/v3) como herramienta inicial para obtener los videos. 
+
+Los comentarios y otros componentes de la interfaz son *placeholders*, o información ficticia creados usando una combinación de la librería [Faker](https://www.npmjs.com/package/faker) y la API [Random Users](https://randomuser.me/).
 
 ## Cosas por mejorar 
 
@@ -12,10 +20,5 @@ Mi primera aplicación en Vue.js, creada para poder practicar y aprender más de
 
 * Estructurar y estandarizar la aplicación siguiendo la Style Guide de Vue. 
 
-## Apis
-
-La aplicación usa la [API de YouTube](https://developers.google.com/youtube/v3) como herramienta inicial para obtener los videos. 
-
-Los comentarios y otros componentes de la interfaz son *placeholders*, o información ficticia creados usando una combinación de la librería [Faker](https://www.npmjs.com/package/faker) y la API [Random Users](https://randomuser.me/).
 
 
