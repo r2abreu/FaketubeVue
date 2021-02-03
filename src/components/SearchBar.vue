@@ -1,5 +1,5 @@
 <template>
-    <form @submit="onFormSubmit">
+    <form @submit.prevent="onFormSubmit">
         <input 
         @input="onInputChange" 
         :value="getSearchTerm" 
@@ -22,7 +22,6 @@ export default {
             this.updateSearchTerm(event.target.value);
         }, 
         onFormSubmit(event) {
-            event.preventDefault();
             const term = event.target.firstElementChild.value;
             term ? this.updateVideos(term) : this.updateVideos('Aprende Vue')  
             console.log('trigger')
